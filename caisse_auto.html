@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caisse Automatique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="caisse_auto.css">
+</head>
+
+<body>
+    <div id="container" class="container py-2 mt-2">
+        <div class="d-flex justify-content-between">
+            <div>
+                <div class="pb-2">
+                    <button id="addArticleBtn" class="btn btn-outline-success me-1 btn_sized">
+                        <i class="fas fa-plus-circle"></i>
+                    </button>
+                    <b class="text-success">Scanner un article</b>
+                </div>
+                <div>
+                    <button id="proceedPaymentBtn" class="btn btn-outline-primary me-1 btn_sized">
+                        <i class="fas fa-euro-sign"></i>
+                    </button>
+                    <b class="text-primary">Payer</b>
+                </div>
+            </div>
+            
+            <div>
+                <b>
+                    <div>Montant Total</div>
+                    <div class="square"><span id="amountToPayLbl">0.00</span>€</div>
+                    
+                </b>
+                    <div>Article(s) : <span id="articleCounterLbl">0</span></div>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+            <div>
+                <div>
+                    <button class="btn_billet btn btn-info" name="50E" disabled>50€</button>
+                    <button class="btn_billet btn btn-info" name="20E" disabled>20€</button>
+                    <button class="btn_billet btn btn-info" name="10E" disabled>10€</button>
+                    <button class="btn_billet btn btn-info" name="5E" disabled>5€</button>
+                    
+                </div>
+                <div class="pt-1">
+                    <button class="btn_coin btn btn-secondary" name="2E" disabled>2€</button>
+                    <button class="btn_coin btn btn-secondary" name="1E" disabled>1€</button>
+                    <button class="btn_coin btn btn-warning" name="50C" disabled>50c</button>
+                    <button class="btn_coin btn btn-warning" name="20C" disabled>20c</button>
+                    <button class="btn_coin btn btn-warning" name="10C" disabled>10c</button>
+                    <button class="btn_coin btn btn-danger" name="5C" disabled>5c</button>
+                    <button class="btn_coin btn btn-danger" name="2C" disabled>2c</button>
+                    <button class="btn_coin btn btn-danger" name="1C" disabled>1c</button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <b>
+                        <div>Reste à payer</div>
+                        <div class="square"><span id="amountNeedPayLbl">0.00</span>€</div>
+                    </b>
+                    <div>Déjà payé : <span id="amountAlreadyPaidLbl">0.00</span>€</div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-1">
+            <b>Retour Monnaie</b>
+            <div id="cashBackContainer">
+
+            </div>
+            <div id="cashBackTemplates" hidden>
+                <div class="billet bg-info m-1 pt-1" data-name="50E">50€</div>
+                <div class="billet bg-info m-1 pt-1" data-name="20E">20€</div>
+                <div class="billet bg-info m-1 pt-1" data-name="10E">10€</div>
+                <div class="billet bg-info m-1 pt-1" data-name="5E">5€</div>
+                <div class="coin bg-secondary m-1 pt-1" data-name="2E">2€</div>
+                <div class="coin bg-secondary m-1 pt-1" data-name="1E">1€</div>
+                <div class="coin bg-warning m-1 pt-1" data-name="50C">50c</div>
+                <div class="coin bg-warning m-1 pt-1" data-name="20C">20c</div>
+                <div class="coin bg-warning m-1 pt-1" data-name="10C">10c</div>
+                <div class="coin bg-danger m-1 pt-1" data-name="5C">5c</div>
+                <div class="coin bg-danger m-1 pt-1" data-name="2C">2c</div>
+                <div class="coin bg-danger m-1 pt-1" data-name="1C">1c</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="caisse_auto_objects.js"></script>
+    <script src="caisse_auto.js"></script>
+</body>
+
+</html>
